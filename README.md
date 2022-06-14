@@ -13,13 +13,13 @@ The code is based on the following `speechbrain` recipes:
 - [UrbanSound8k](https://github.com/speechbrain/speechbrain/tree/develop/recipes/UrbanSound8k)
 - [VoxCeleb](https://github.com/speechbrain/speechbrain/tree/develop/recipes/VoxCeleb/SpeakerRec)
 
-Follow them to download and prepare the datasets.
+We provide scripts for UrbanSound8k only. The datasets should be placed in the `data/` folder.
 
 
 ### Run 10-fold
 
 Valdiating and testing on fold 1:
-```bash
+```sh
 # discrete-attention models
 for max_act in "softmax", "entmax1333", "entmax15", "sparsemax"
 do
@@ -56,7 +56,7 @@ See the config files in the `hparams` folder for more information.
 ### Save and plot attention maps
 
 First, save the spectrograms:
-```bash
+```sh
 mkdir -p specs/urbansound8k_continuous_sparsemax
 python3 urbansound8k_save_specs.py hparams/urbansound8k_acrnn.yaml \
     --train_fold_nums=[2, 3, 4, 5, 6, 7, 8, 9, 10] \
@@ -71,7 +71,7 @@ python3 urbansound8k_save_specs.py hparams/urbansound8k_acrnn.yaml \
 ```
 
 And then save the attention maps:
-```bash
+```sh
 mkdir saved_attentions
 python3 urbansound8k_save_attentions.py hparams/urbansound8k_acrnn.yaml \
     --train_fold_nums=[2, 3, 4, 5, 6, 7, 8, 9, 10] \
