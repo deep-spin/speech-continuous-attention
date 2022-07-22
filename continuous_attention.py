@@ -1,12 +1,21 @@
 import torch
 from torch import nn
 
-from sparse_continuous_distributions.basis_function import (PowerBasisFunctions, SineBasisFunctions,
-                                                            CosineBasisFunctions, GaussianBasisFunctions)
-from sparse_continuous_distributions.continuous_entmax import (ContinuousEntmax, ContinuousSoftmax, ContinuousSparsemax,
-                                                               ContinuousBiweight, ContinuousTriweight)
-from sparse_continuous_distributions.continuous_sparsemax import ContinuousSparsemax as ContinuousSparsemaxOriginal
-from sparse_continuous_distributions.continuous_softmax import ContinuousSoftmax as ContinuousSoftmaxOriginal
+from spcdist.attention.basis_function import (
+    PowerBasisFunctions, 
+    SineBasisFunctions,
+    CosineBasisFunctions, 
+    GaussianBasisFunctions
+)
+from spcdist.attention.continuous_entmax import (
+    ContinuousEntmax, 
+    ContinuousSoftmax, 
+    ContinuousSparsemax,
+    ContinuousBiweight, 
+    ContinuousTriweight
+)
+from spcdist.attention.continuous_sparsemax_original import ContinuousSparsemax as ContinuousSparsemaxOriginal
+from spcdist.attention.continuous_softmax_original import ContinuousSoftmax as ContinuousSoftmaxOriginal
 
 available_max_activations = {
     'softmax': ContinuousSoftmax,

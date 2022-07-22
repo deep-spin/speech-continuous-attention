@@ -16,6 +16,19 @@ The code is based on the following `speechbrain` recipes:
 We provide scripts for UrbanSound8k only. The datasets should be placed in the `data/` folder.
 
 
+## Installation
+
+First, install the [spcdist](https://github.com/deep-spin/sparse_continuous_distributions) library to get support for sparse continuous distributions:
+```
+pip3 install git+https://github.com/deep-spin/sparse_continuous_distributions#egg=spcdist
+```
+
+Then install other requirements via:
+```
+pip3 install -r requirements.txt
+```
+
+
 ### Run 10-fold
 
 Valdiating and testing on fold 1:
